@@ -1,3 +1,6 @@
+use image::GenericImageView;
+
 fn main() {
-    println!("Hello, world!");
+    let img = image::open("training_images/training_images/147091/Test image.jpg").unwrap();
+    println!("Image dimensions: {:?}", img.dimensions());
 }
