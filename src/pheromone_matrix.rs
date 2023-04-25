@@ -9,7 +9,7 @@ impl PheromoneMatrix {
         PheromoneMatrix {
             width,
             height,
-            matrix: vec![vec![0.0; width]; height],
+            matrix: vec![vec![1.0; width]; height],
         }
     }
 

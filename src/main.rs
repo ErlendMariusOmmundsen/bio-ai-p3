@@ -27,7 +27,14 @@ fn main() {
     mut_img.save("test.jpg").expect("Cannot save image");
 }
 
-fn generate_ant_matrix(image: &image::RgbImage) -> Vec<Vec<ant::Ant>> {
+pub fn euclidean_distance(p1: (u32, u32), p2: (u32, u32)) -> f64 {
+    let x1 = p1.0;
+    let y1 = p1.1;
+    let x2 = p2.0;
+    let y2 = p2.1;
+    let distance = ((x1 - x2).pow(2) + (y1 - y2).pow(2)) as f64;
+    distance.sqrt()
+}
     let mut ant_matrix: Vec<Vec<ant::Ant>> = Vec::new();
     for y in 0..image.height() {
         let mut row: Vec<ant::Ant> = Vec::new();
